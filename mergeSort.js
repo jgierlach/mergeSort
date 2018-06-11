@@ -13,13 +13,18 @@ function split(wholeArray) {
 
 function merge(arr1, arr2) {
   let newArr = [];
+  let arrLen1 = arr1.length;
+  let arrLen2 = arr2.length;
+  let leftIndexCounter = 0;
+  let rightIndexCounter = 0;
 
-  if (arr1[0] > arr2[0]) {
-    
+  while(leftIndexCounter < arrLen1 && rightIndexCounter < arrLen2) {
+  if (arr1[leftIndexCounter] > arr2[rightIndexCounter]) {
+    newArr.push(arr2[rightIndexCounter++])
   } else {
-
+    newArr.push(arr1[leftIndexCounter++])
   }
-
+}
     // return arr1.concat(arr2)
 }
 
