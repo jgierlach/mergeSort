@@ -5,7 +5,7 @@ function split(wholeArray) {
 
     firstHalf = wholeArray.slice(0, halfWayPoint)
     secondHalf = wholeArray.slice(halfWayPoint, wholeArray.length)
-    
+
       return [firstHalf, secondHalf];
     }
 
@@ -21,17 +21,22 @@ function mergeSort(arr) {
     console.log(arr)
     if(arr.length === 1) {
 
-    } 
-    else {
-        split(arr).forEach((index) => {
-            mergeSort(index)
-        })
     }
-    
+    else {
+        // split(arr).forEach((index) => {
+        //     mergeSort(index)
+        // })
+        let newArr = split(arr);
+        // return mergeSort(newArr[0]) + mergeSort(newArr[1]);
+        // console.log();
+    }
+    if (newArr[0] > newArr[1]) {
+      merge(newArr[1], newArr[0]);
+    } else {
+      merge(newArr[0], newArr[1]);
+    }
+
 }
 
 mergeSort([2, 1])
 //output: [[3], [5], [7], [2], [5], [8]]
-
-
-    
